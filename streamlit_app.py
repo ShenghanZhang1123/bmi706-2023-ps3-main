@@ -144,7 +144,9 @@ chart2 = alt.Chart(subset).mark_bar().encode(
 )
 
 ### Bonus ###
+
 st.altair_chart(chart, use_container_width=True)
+st.altair_chart(chart2, use_container_width=True)
 
 countries_in_subset = subset["Country"].unique()
 if len(countries_in_subset) != len(countries):
