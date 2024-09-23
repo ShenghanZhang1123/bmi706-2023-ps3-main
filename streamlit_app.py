@@ -134,6 +134,16 @@ chart = alt.Chart(subset).mark_rect().encode(
 # )
 ### P2.5 ###
 
+### Bonus ###
+chart2 = alt.Chart(subset).mark_bar().encode(
+    y=alt.Y('Country:O', title='Country', sort='-x'),
+    x=alt.X('Pop:Q', title='Sum of population size'),
+    tooltip=['Country', 'Pop']
+).properties(
+    title='Population of Selected Countries'
+)
+
+### Bonus ###
 st.altair_chart(chart, use_container_width=True)
 
 countries_in_subset = subset["Country"].unique()
