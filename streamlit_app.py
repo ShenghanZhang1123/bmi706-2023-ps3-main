@@ -116,7 +116,7 @@ chart = alt.Chart(subset).mark_rect().encode(
     y='Country:O',
     color=alt.Color('Rate:Q', scale=alt.Scale(
             type='log', base=10,
-            domain=[0.01, 100],
+            domain=[0.01, 1000],
             clamp=True
         ), legend=alt.Legend(title="Mortality rate per 100k")
     )
