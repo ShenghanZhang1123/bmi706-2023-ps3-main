@@ -119,8 +119,7 @@ chart = alt.Chart(subset).mark_rect().encode(
         alt.value('#deebf7'),
         alt.Color('Rate:Q', scale=alt.Scale(
             type='log', base=10,
-            domain=[0.01, 1, 75, 100],
-            range=['#deebf7', '#9ecae1', '#3182bd', '#08519c']
+            domain=[0.01, subset['Rate'].max()]
         ), legend=alt.Legend(title="Mortality rate per 100k")
                   ),
     )
