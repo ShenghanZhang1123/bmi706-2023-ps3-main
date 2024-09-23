@@ -45,7 +45,7 @@ st.write("## Age-specific cancer mortality rates")
 
 ### P2.1 ###
 # replace with st.slider
-year = st.slider("Year", df["Year"].min(), df["Year"].max(), 2011)
+year = st.slider("Year", df["Year"].min(), df["Year"].max(), 2012)
 subset = df[df["Year"] == year]
 ### P2.1 ###
 
@@ -115,7 +115,7 @@ chart = alt.Chart(subset).mark_rect().encode(
     x=alt.X('Age:O', sort=ages),
     y='Country:O',
     color=alt.Color('Rate:Q', scale=alt.Scale(
-            domain=[0, 100]
+            domain=[0, 100], bins=[0, 1, 100]
         ), legend=alt.Legend(title="Mortality rate per 100k"))
 ).properties(
     title=f"{cancer} mortality rates for {'males' if sex == 'M' else 'females'} in {year}"
