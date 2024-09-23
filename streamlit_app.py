@@ -114,14 +114,11 @@ ages = [
 chart = alt.Chart(subset).mark_rect().encode(
     x=alt.X('Age:O', sort=ages),
     y='Country:O',
-    color=alt.condition(
-        alt.datum.Rate == 0,
-        alt.value('#deebf7'),
-        alt.Color('Rate:Q', scale=alt.Scale(
+    color=alt.Color('Rate:Q', scale=alt.Scale(
             type='log', base=10,
-            domain=[0.01, 100]
+            domain=[0.01, 100],
+            clamp=True
         ), legend=alt.Legend(title="Mortality rate per 100k")
-                  ),
     )
 ).properties(
     title=f"{cancer} mortality rates for {'males' if sex == 'M' else 'females'} in {year}"
