@@ -45,7 +45,7 @@ st.write("## Age-specific cancer mortality rates")
 
 ### P2.1 ###
 # replace with st.slider
-year = st.slider("Year", df["Year"].min(), df["Year"].max(), df["Year"].min())
+year = st.slider("Year", df["Year"].min(), df["Year"].max(), 2011)
 subset = df[df["Year"] == year]
 ### P2.1 ###
 
@@ -55,7 +55,7 @@ subset = df[df["Year"] == year]
 sex = st.radio(
     "Sex",
     ["M", "F"],
-    index=None,
+    index=0,
 )
 subset = subset[subset["Sex"] == sex]
 ### P2.2 ###
