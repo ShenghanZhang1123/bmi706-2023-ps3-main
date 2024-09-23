@@ -115,8 +115,8 @@ chart = alt.Chart(subset).mark_rect().encode(
     x=alt.X('Age:O', sort=ages),
     y='Country:O',
     color=alt.condition(
-        alt.datum.value == 0,
-        alt.value('lightblue'),
+        alt.datum.Rate == 0,
+        alt.Rate('lightblue'),
         alt.Color('Rate:Q', scale=alt.Scale(
             type='log',
             domain=[0.01, 100],
